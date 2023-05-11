@@ -4,9 +4,9 @@ namespace RoleplayGame
     {
 
 
-        public Dwarf(string name, int attackValue, int defenseValue): base(name,attackValue,defenseValue)
+        public Dwarf(string name): base(name)
         {
-
+            this.DefenseValue = defenseValue;
         }
 
         public Axe Axe { get; set; }
@@ -30,5 +30,7 @@ namespace RoleplayGame
                 return Shield.DefenseValue + Helmet.DefenseValue;
             }
         }
+
+
     }
 }

@@ -16,15 +16,19 @@ namespace RoleplayGame
             }
         }
 
-        public int AttackValue {get ; set;}
+
 
         public int DefenseValue {get ; set;}
-        public Character(string name ,int attackValue, int defenseValue)
+        public Character(string name)
         {
             this.Name = name;
             this.Health = 100;
-            this.AttackValue = attackValue;
-            this.DefenseValue = defenseValue;
+
+        }
+
+        public void Cure()
+        {
+            this.Health = 100;
         }
         public void ReceiveAttack(int power)
         {
@@ -32,11 +36,6 @@ namespace RoleplayGame
             {
                 this.Health -= power - this.DefenseValue;
             }
-        }
-
-        public void Cure()
-        {
-            this.Health = 100;
         }
     }
 }

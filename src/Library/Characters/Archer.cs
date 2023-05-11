@@ -4,7 +4,7 @@ namespace RoleplayGame
     {
 
 
-        public Archer(string name, int attackValue, int defenseValue): base(name,attackValue,defenseValue)
+        public Archer(string name, int defenseValue): base(name,defenseValue)
         {
 
         }
@@ -12,6 +12,7 @@ namespace RoleplayGame
         public Bow Bow { get; set; }
 
         public Helmet Helmet { get; set; }
+        
 
         public int attackValue
         {
@@ -28,6 +29,14 @@ namespace RoleplayGame
                 return Helmet.DefenseValue;
             }
         }
+        public void ReceiveAttack(int power)
+        {
+            if (this.DefenseValue < power)
+            {
+                this.Health -= power - this.DefenseValue;
+            }
+        }
+
 
 
 

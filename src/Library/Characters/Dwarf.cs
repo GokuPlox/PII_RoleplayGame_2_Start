@@ -1,14 +1,15 @@
 namespace RoleplayGame
 {
-    public class Dwarf : Character
+    public class Dwarf : ICharacter
     {
 
 
-        public Dwarf(string name): base(name)
+        public Dwarf(string name)
         {
-            this.DefenseValue = defenseValue;
+            this.Name=name;
         }
-
+        public string Name {get;set;}
+        public int health = 100;
         public Axe Axe { get; set; }
 
         public Shield Shield { get; set; }
@@ -23,7 +24,7 @@ namespace RoleplayGame
             }
         }
 
-        public int defenseValue
+        public int DefenseValue
         {
             get
             {
@@ -34,8 +35,13 @@ namespace RoleplayGame
         {
             if (this.DefenseValue < power)
             {
-                this.Health -= power - this.DefenseValue;
+                this.health -= power - this.DefenseValue;
             }
+        }
+
+        public void Cure()
+        {
+            this.health=100;
         }
 
     }

@@ -1,9 +1,9 @@
 namespace RoleplayGame
 {
-    public class Wizard : Character
+    public class Wizard : ICharacter
     {
-
-        public Wizard(string name, int attackValue, int defenseValue): base(name)
+        public int health = 100;
+        public Wizard(string name)
         {
 
         }
@@ -14,7 +14,7 @@ namespace RoleplayGame
 
         public Staff Staff { get; set; }
 
-        public int attackValue
+        public int AttackValue
         {
             get
             {
@@ -22,7 +22,7 @@ namespace RoleplayGame
             }
         }
 
-        public int defenseValue
+        public int DefenseValue
         {
             get
             {
@@ -33,9 +33,17 @@ namespace RoleplayGame
         {
             if (this.DefenseValue < power)
             {
-                this.Health -= power - this.DefenseValue;
+                this.health -= power - this.DefenseValue;
             }
         }
+        public void Cure()
+        {
+            this.health = 100;
+        }
+
+
+
+
 
     }
 }

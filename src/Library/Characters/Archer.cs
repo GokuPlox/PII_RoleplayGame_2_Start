@@ -4,7 +4,7 @@ namespace RoleplayGame
     {
 
 
-        public Archer(string name, int defenseValue): base(name,defenseValue)
+        public Archer(string name, int defenseValue): base(name)
         {
 
         }
@@ -33,7 +33,7 @@ namespace RoleplayGame
         {
             if (this.DefenseValue < power)
             {
-                this.Health -= power - this.DefenseValue;
+                Character.Health -= power - this.DefenseValue;
             }
         }
 

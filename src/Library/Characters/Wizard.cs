@@ -3,7 +3,7 @@ namespace RoleplayGame
     public class Wizard : Character
     {
 
-        public Wizard(string name, int attackValue, int defenseValue): base(name,attackValue,defenseValue)
+        public Wizard(string name, int attackValue, int defenseValue): base(name)
         {
 
         }
@@ -29,7 +29,13 @@ namespace RoleplayGame
                 return SpellsBook.DefenseValue + Staff.DefenseValue;
             }
         }
-
+        public void ReceiveAttack(int power)
+        {
+            if (this.DefenseValue < power)
+            {
+                this.Health -= power - this.DefenseValue;
+            }
+        }
 
     }
 }

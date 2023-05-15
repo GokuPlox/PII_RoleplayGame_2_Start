@@ -4,7 +4,7 @@ namespace RoleplayGame
     {
 
 
-        public Knight(string name, int attackValue, int defenseValue): base(name,attackValue,defenseValue)
+        public Knight(string name, int attackValue, int defenseValue): base(name)
         {
             this.Name = name;
         }

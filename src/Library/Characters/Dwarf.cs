@@ -30,7 +30,13 @@ namespace RoleplayGame
                 return Shield.DefenseValue + Helmet.DefenseValue;
             }
         }
-
+        public void ReceiveAttack(int power)
+        {
+            if (this.DefenseValue < power)
+            {
+                this.Health -= power - this.DefenseValue;
+            }
+        }
 
     }
 }

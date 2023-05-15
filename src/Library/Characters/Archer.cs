@@ -1,17 +1,21 @@
 namespace RoleplayGame
 {
-    public class Archer : Character
+    public class Archer : ICharacter
     {
 
 
-        public Archer(string name, int defenseValue): base(name)
+        public Archer(string name)
         {
-
         }
         
         public Bow Bow { get; set; }
 
         public Helmet Helmet { get; set; }
+
+        public int  Health {get;set;}
+        
+
+        public int Defense {get; set;}
         
 
         public int attackValue
@@ -26,14 +30,15 @@ namespace RoleplayGame
         {
             get
             {
-                return Helmet.DefenseValue;
+                this.Defense = Helmet.DefenseValue;
+                return Defense;
             }
         }
         public void ReceiveAttack(int power)
         {
-            if (this.DefenseValue < power)
+            if (Defense < power)
             {
-                Character.Health -= power - this.DefenseValue;
+                Health -= power - this.Defense;
             }
         }
 

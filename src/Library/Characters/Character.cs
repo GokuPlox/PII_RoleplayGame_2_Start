@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public abstract class Character
+    public interface ICharacter
 
     {
         public string Name {get;set;}
@@ -19,12 +19,12 @@ namespace RoleplayGame
 
 
         public int DefenseValue {get ; set;}
-        public Character(string name)
-        {
-            this.Name = name;
-            this.Health = 100;
+        ///public Character(string name)
+        //{
+          //  this.Name = name;
+            //this.Health = 100;
 
-        }
+        ///}
 
         public void Cure()
         {
